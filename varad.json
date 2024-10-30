@@ -1,0 +1,147 @@
+    {
+        "vara": [
+            {
+                "@attributes": {
+                    "varanumber": "657483OD"
+                },
+                "details": {
+                    "varanumber": "657483OD",
+                    "nimetus": "arvuti",
+                    "seisund": "Uus",
+                    "maksmus": "123",
+                    "vastutaja": "Irina Merkulova",
+                    "lisaaeg": "12.12.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657484OD"
+                },
+                "details": {
+                    "varanumber": "657484OD",
+                    "nimetus": "telefon",
+                    "seisund": "Kasutatud",
+                    "maksmus": "230",
+                    "vastutaja": "Andrei Ivanov",
+                    "lisaaeg": "11.11.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657485OD"
+                },
+                "details": {
+                    "varanumber": "657485OD",
+                    "nimetus": "monitor",
+                    "seisund": "Uus",
+                    "maksmus": "150",
+                    "vastutaja": "Anna Petrova",
+                    "lisaaeg": "10.10.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657486OD"
+                },
+                "details": {
+                    "varanumber": "657486OD",
+                    "nimetus": "printer",
+                    "seisund": "Uus",
+                    "maksmus": "200",
+                    "vastutaja": "Maria Smirnova",
+                    "lisaaeg": "09.09.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657487OD"
+                },
+                "details": {
+                    "varanumber": "657487OD",
+                    "nimetus": "hiir",
+                    "seisund": "Kasutatud",
+                    "maksmus": "20",
+                    "vastutaja": "Pavel Komarov",
+                    "lisaaeg": "08.08.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657488OD"
+                },
+                "details": {
+                    "varanumber": "657488OD",
+                    "nimetus": "klaviatuur",
+                    "seisund": "Uus",
+                    "maksmus": "50",
+                    "vastutaja": "Sergei Lebedev",
+                    "lisaaeg": "07.07.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657489OD"
+                },
+                "details": {
+                    "varanumber": "657489OD",
+                    "nimetus": "tahvelarvuti",
+                    "seisund": "Kasutatud",
+                    "maksmus": "300",
+                    "vastutaja": "Oksana Belova",
+                    "lisaaeg": "06.06.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657490OD"
+                },
+                "details": {
+                    "varanumber": "657490OD",
+                    "nimetus": "projektor",
+                    "seisund": "Uus",
+                    "maksmus": "500",
+                    "vastutaja": "Viktor Sergeev",
+                    "lisaaeg": "05.05.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657491OD"
+                },
+                "details": {
+                    "varanumber": "657491OD",
+                    "nimetus": "ruuter",
+                    "seisund": "Kasutatud",
+                    "maksmus": "100",
+                    "vastutaja": "Dmitri Kuznetsov",
+                    "lisaaeg": "04.04.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657492OD"
+                },
+                "details": {
+                    "varanumber": "657492OD",
+                    "nimetus": "kõvaketas",
+                    "seisund": "Uus",
+                    "maksmus": "80",
+                    "vastutaja": "Natalia Pavlova",
+                    "lisaaeg": "03.03.2023"
+                }
+            },
+            {
+                "@attributes": {
+                    "varanumber": "657493OD"
+                },
+                "details": {
+                    "varanumber": "657493OD",
+                    "nimetus": "kõlarid",
+                    "seisund": "Kasutatud",
+                    "maksmus": "60",
+                    "vastutaja": "Vladimir Fedorov",
+                    "lisaaeg": "02.02.2023"
+                }
+            }
+        ]
+    }
