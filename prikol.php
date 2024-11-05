@@ -4,6 +4,8 @@ $jsonFile = 'varad.json';
 $jsonData = file_get_contents($jsonFile);
 $data = json_decode($jsonData, true);
 
+$message = ""; // To store success or error message
+
 // Handle form submission to add a new entry
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     $newVara = [
@@ -26,7 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     } else {
         $message = "Error adding new item!";
     }
+
+    // Redirect to avoid form re-submission on refresh
+    header("Location: /VarahaldussustemXml/prikol.php");
+    exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -35,18 +42,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Varade Haldussüsteem</title>
-    <style>
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid black; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .message { color: green; font-weight: bold; margin-top: 10px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h2>Varad List</h2>
 <?php
-if (isset($message)) {
+if (!empty($message)) {
     echo "<div class='message'>{$message}</div>";
 }
 ?>
