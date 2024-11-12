@@ -92,3 +92,21 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+/* Style for the calendar (date picker) field */
+input[type="date"] {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Calendar field hover and focus effects */
+input[type="date"]:hover,
+input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #e0e7ff;
+}
