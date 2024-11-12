@@ -30,10 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     }
 
     // Redirect to avoid form re-submission on refresh
-    header("Location: /VarahaldussustemXml/prikol.php");
+    header("Location: /prikol.php");
     exit;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +56,8 @@ if (!empty($message)) {
 <button onclick="showNew()">Show Uus</button>
 <button onclick="showUsed()">Show Kasutatud</button>
 <button onclick="showOldest()">Show 5 Oldest</button>
+<button onclick="showJSON()">Show JSON Code</button>
+<button onclick="showXML()">Show XML Code (Varahaldussustem.xml)</button>
 
 <table id="varadTable">
     <thead>
@@ -106,11 +107,22 @@ if (!empty($message)) {
     <label for="vastutaja">Vastutaja:</label>
     <input type="text" id="vastutaja" name="vastutaja" required><br><br>
 
-    <label for="lisaaeg">Lisa Aeg (dd.mm.yyyy):</label>
-    <input type="text" id="lisaaeg" name="lisaaeg" required><br><br>
+    <label for="lisaaeg">Lisa Aeg:</label>
+    <input type="date" id="lisaaeg" name="lisaaeg" required><br><br>
 
     <input type="submit" name="submit" value="Lisa Vara">
 </form>
+
+<!-- Placeholders to display JSON and XML data -->
+<div id="jsonDisplay" style="display:none; margin-top: 20px; background-color: #f8f8f8; padding: 10px; border: 1px solid #ddd;">
+    <h3>JSON Code:</h3>
+    <pre id="jsonContent"></pre>
+</div>
+
+<div id="xmlDisplay" style="display:none; margin-top: 20px; background-color: #f8f8f8; padding: 10px; border: 1px solid #ddd;">
+    <h3>XML Code (Varahaldussustem.xml):</h3>
+    <pre id="xmlContent"></pre>
+</div>
 
 <script>
     let varadData = <?php echo json_encode($data["vara"]); ?>;
@@ -159,6 +171,137 @@ if (!empty($message)) {
             return dateA - dateB;
         });
         displayData(sortedData.slice(0, 5));
+    }
+
+    // JSON and XML data variables
+    const jsonData = <?php echo json_encode($data["vara"], JSON_PRETTY_PRINT); ?>;
+    const xmlData = `
+<varad>
+    <vara varanumber="657483OD">
+        <details>
+            <varanumber>657483OD</varanumber>
+            <nimetus>arvuti</nimetus>
+            <seisund>Uus</seisund>
+            <maksmus>123</maksmus>
+            <vastutaja>Irina Merkulova</vastutaja>
+            <lisaaeg>12.12.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657484OD">
+        <details>
+            <varanumber>657484OD</varanumber>
+            <nimetus>telefon</nimetus>
+            <seisund>Kasutatud</seisund>
+            <maksmus>230</maksmus>
+            <vastutaja>Andrei Ivanov</vastutaja>
+            <lisaaeg>11.11.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657485OD">
+        <details>
+            <varanumber>657485OD</varanumber>
+            <nimetus>monitor</nimetus>
+            <seisund>Uus</seisund>
+            <maksmus>150</maksmus>
+            <vastutaja>Anna Petrova</vastutaja>
+            <lisaaeg>10.10.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657486OD">
+        <details>
+            <varanumber>657486OD</varanumber>
+            <nimetus>printer</nimetus>
+            <seisund>Uus</seisund>
+            <maksmus>200</maksmus>
+            <vastutaja>Maria Smirnova</vastutaja>
+            <lisaaeg>09.09.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657487OD">
+        <details>
+            <varanumber>657487OD</varanumber>
+            <nimetus>hiir</nimetus>
+            <seisund>Kasutatud</seisund>
+            <maksmus>20</maksmus>
+            <vastutaja>Pavel Komarov</vastutaja>
+            <lisaaeg>08.08.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657488OD">
+        <details>
+            <varanumber>657488OD</varanumber>
+            <nimetus>klaviatuur</nimetus>
+            <seisund>Uus</seisund>
+            <maksmus>50</maksmus>
+            <vastutaja>Sergei Lebedev</vastutaja>
+            <lisaaeg>07.07.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657489OD">
+        <details>
+            <varanumber>657489OD</varanumber>
+            <nimetus>tahvelarvuti</nimetus>
+            <seisund>Kasutatud</seisund>
+            <maksmus>300</maksmus>
+            <vastutaja>Oksana Belova</vastutaja>
+            <lisaaeg>06.06.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657490OD">
+        <details>
+            <varanumber>657490OD</varanumber>
+            <nimetus>projektor</nimetus>
+            <seisund>Uus</seisund>
+            <maksmus>500</maksmus>
+            <vastutaja>Viktor Sergeev</vastutaja>
+            <lisaaeg>05.05.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657491OD">
+        <details>
+            <varanumber>657491OD</varanumber>
+            <nimetus>ruuter</nimetus>
+            <seisund>Kasutatud</seisund>
+            <maksmus>100</maksmus>
+            <vastutaja>Dmitri Kuznetsov</vastutaja>
+            <lisaaeg>04.04.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657492OD">
+        <details>
+            <varanumber>657492OD</varanumber>
+            <nimetus>kõvaketas</nimetus>
+            <seisund>Uus</seisund>
+            <maksmus>80</maksmus>
+            <vastutaja>Natalia Pavlova</vastutaja>
+            <lisaaeg>03.03.2023</lisaaeg>
+        </details>
+    </vara>
+    <vara varanumber="657493OD">
+        <details>
+            <varanumber>657493OD</varanumber>
+            <nimetus>kõlarid</nimetus>
+            <seisund>Kasutatud</seisund>
+            <maksmus>60</maksmus>
+            <vastutaja>Vladimir Fedorov</vastutaja>
+            <lisaaeg>02.02.2023</lisaaeg>
+        </details>
+    </vara>
+</varad>
+    `;
+
+    // Show JSON data
+    function showJSON() {
+        document.getElementById('jsonContent').textContent = JSON.stringify(jsonData, null, 4);
+        document.getElementById('jsonDisplay').style.display = 'block';
+        document.getElementById('xmlDisplay').style.display = 'none';
+    }
+
+    // Show XML data
+    function showXML() {
+        document.getElementById('xmlContent').textContent = xmlData.trim();
+        document.getElementById('xmlDisplay').style.display = 'block';
+        document.getElementById('jsonDisplay').style.display = 'none';
     }
 
     // Load data on page load
